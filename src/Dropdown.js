@@ -3,18 +3,19 @@ var data = require("./MOCK_DATA.json");
 
 const Dropdown = (props) => {
   const { value, chipSet, onSearch } = props;
+  //const [dropdown , setDropdown ]= useState(false);
   // flitering the data according to the value enter
   // using slice to get number of chips displayed according the input value
-  //and then mapping the data 
+  //and then mapping the data
+
   return (
     <>
       <div className="dropdown">
         {data
-          .filter((chip) => {
+          .filter((chip, id) => {
             const searchTerm = value.toLowerCase();
             const fullName = chip.full_name.toLowerCase();
-
-            if (chipSet.has(chip.full_name, chip.image)) {
+            if (chipSet.has(chip)) {
               return null;
             } else {
               return (
@@ -27,7 +28,7 @@ const Dropdown = (props) => {
           .slice(0, 5)
           .map((chip) => (
             <div
-              onClick={() => onSearch(chip.full_name, chip.image)}
+              onClick={() => onSearch(chip)}
               className="dropdown-row"
               key={chip.id}
             >
@@ -37,14 +38,13 @@ const Dropdown = (props) => {
                   alt=""
                   style={{
                     height: 50,
-                    width: 40,
+                    width: 50,
                     borderRadius: "50%",
                   }}
                 />
               </div>
               <div className="text">
                 <h6>
-                  {" "}
                   {chip.full_name}
                   <span className="email">{chip.email} </span>
                 </h6>
