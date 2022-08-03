@@ -1,0 +1,73 @@
+.App {
+  height: 300px;
+  width: 100%;
+  background-color: #fdf9f9;
+  border-bottom: 2px solid rgb(15, 15, 15);
+}
+.chip-container {
+  min-width: 60%;
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  min-height: 30px;
+  border-bottom: 2px solid rgb(37, 139, 235);
+  padding: 10px;
+}
+.chip-container input {
+  border: none;
+  flex: 1;
+  outline: none;
+  padding: 5;
+  max-width: min-content;
+  background-color: #fdf9f9;
+  height: 50px;
+}
+.chip {
+  display: flex;
+  align-items: center;
+  padding: 5px;
+  background-color: #fdf9f9;
+  border: 1px solid gray;
+  border-radius: 15px;
+  height: fit-content;
+  margin: 2px 5px 2px 0px;
+}
+
+.dropdown {
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  width: fit-content;
+  position: relative;
+  border: 1px #333;
+  overflow: hidden;
+}
+
+.dropdown::shadow {
+  border: none;
+  box-shadow: 1px 1px 2px 1px rgba(0, 0, 0, 0.445);
+}
+
+.dropdown-row {
+  cursor: pointer;
+  height: 50px;
+  margin: 2px 0;
+  z-index: 10;
+}
+.dropdown-row:hover {
+  background-color: #fdf9f9;
+}
+img {
+  margin-left: 3px;
+  float: left;
+}
+.email {
+  font-size: 10px;
+  color: grey;
+}
+.text {
+  margin-left: 60px;
+}
+.h6 {
+  margin: 0px;
+}
